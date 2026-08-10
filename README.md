@@ -600,3 +600,20 @@ Or download a pre-built binary from the [latest release](https://github.com/call
 Ensure `mdbase-lsp` is in your PATH. Your project must be a valid mdbase collection (a folder containing `mdbase.yaml`).
 
 </details>
+
+<details>
+<summary>Lean 4 (<code>lean4-lsp</code>)</summary>
+
+Install Lean 4 via [elan](https://lean-lang.org/lean4/doc/setup.html), the Lean toolchain manager:
+
+```bash
+curl https://elan.lean-lang.org/elan-init.sh -sSf | sh
+```
+
+The plugin launches the Lean language server through a small proxy (Node.js ≥ 18, Bun, or Deno required) that detects the Lake project root per opened file — walking up to the nearest `lakefile.toml`/`lakefile.lean` and running `lake serve` there, or `lean --server` for standalone files. It finds `lake`/`lean` via PATH, `$ELAN_HOME/bin`, or `~/.elan/bin`, so no PATH setup is needed after a stock elan install.
+
+It also bundles the `lean-goal` CLI (available on PATH inside Claude Code) for interactive proof states — `lean-goal goal file:line:col`, `lean-goal sorries file`, `lean-goal check file` — backed by a warm per-project server daemon, plus a skill teaching the interactive proving workflow.
+
+Upstream: [LucianoXu/claude-lean4-lsp](https://github.com/LucianoXu/claude-lean4-lsp). Replaces the former `lean4-lake-lsp` / `lean4-lean-lsp` pair.
+
+</details>
