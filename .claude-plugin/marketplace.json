@@ -886,7 +886,7 @@
     },
     {
       "name": "lean4-lsp",
-      "version": "0.2.0",
+      "version": "0.2.1",
       "source": "./lean4-lsp",
       "description": "Lean 4 language server with automatic Lake project-root detection, elan toolchain resolution, and multi-project routing. Bundles the lean-goal CLI for interactive proof-state queries (goals, sorries, diagnostics) and a skill teaching the interactive theorem-proving workflow.",
       "category": "development",
